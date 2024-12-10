@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "(Nest JS) start:dev",
+      "request": "launch",
+      "command": "pnpm run start:dev --inspect-brk --inspect --logHeapUsage --no-file-parallelism",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "(Nest JS) test:watch",
+      "request": "launch",
+      "command": "pnpm run test:watch ${input:filePath} --inspect-brk --inspect --logHeapUsage --no-file-parallelism",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "(Nest JS) test:e2e",
+      "request": "launch",
+      "command": "pnpm run test:e2e ${input:e2eFilePath} --inspect-brk --inspect --logHeapUsage --no-file-parallelism",
+      "cwd": "${workspaceFolder}"
+    },
+  ],
+  "inputs": [
+    {
+      "id": "filePath",
+      "type": "promptString",
+      "description": "Digite o caminho relativo do arquivo a ser executado"
+    },
+    {
+      "id": "e2eFilePath",
+      "type": "promptString",
+      "description": "Digite o caminho relativo do arquivo a ser executado"
+    }
+  ]
+}
